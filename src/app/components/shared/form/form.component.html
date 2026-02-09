@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7 col-sm-10">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h5 class="mb-0 text-center">{{ formTitle }}</h5>
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="camelForm" (ngSubmit)="onSubmit()" novalidate>
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Teve neve</label>
+              <input
+                id="name"
+                formControlName="name"
+                class="form-control"
+                [class.is-invalid]="camelForm.get('name')?.invalid && camelForm.get('name')?.touched"
+                placeholder="Add meg a teve nevét..." />
+
+              @if (camelForm.get('name')?.invalid && camelForm.get('name')?.touched) {
+                <div class="invalid-feedback">
+                  A név legalább 2 karakter hosszú kell legyen.
+                </div>
+              }
+            </div>
+
+            <div class="mb-4">
+              <label for="humpCount" class="form-label">Púpok száma</label>
+              <input
+                id="humpCount"
+                formControlName="humpCount"
+                type="number"
+                class="form-control"
+                [class.is-invalid]="camelForm.get('humpCount')?.invalid && camelForm.get('humpCount')?.touched"
+                min="1"
+                max="2"
+                placeholder="1 vagy 2" />
+
+              @if (camelForm.get('humpCount')?.invalid && camelForm.get('humpCount')?.touched) {
+                <div class="invalid-feedback">
+                  A púpok száma csak 1 vagy 2 lehet.
+                </div>
+              }
+            </div>
+
+            <div class="d-grid">
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+                [disabled]="camelForm.invalid">
+                Mentés
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

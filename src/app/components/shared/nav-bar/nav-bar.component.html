@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" routerLink="/">
+      <span>Teve nyilvántartó</span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item">
+          <a
+            class="nav-link px-3 rounded-pill"
+            routerLink="/listing"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">
+            Tevék listázása
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link px-3 rounded-pill"
+            routerLink="/adding"
+            routerLinkActive="active">
+            Teve hozzáadása
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
